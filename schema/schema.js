@@ -1,5 +1,7 @@
-const { gql } = require('apollo-server-express')
+const { gql } = require("apollo-server-express");
+// import { GraphQLObjectId } from "graphql-objectid-scalar";
 const typeDefs = gql`
+  scalar GraphQLObjectId
   type Book {
     id: ID
     name: String
@@ -19,5 +21,9 @@ const typeDefs = gql`
     authors: [Author]
     author(id: ID!): Author
   }
-`
-module.exports = typeDefs
+  type Mutation {
+    createAuthor(name: String, age: Int): Author
+    createBook(name: String, genre: String, authorId: GraphQLObjectId): Book
+  }
+`;
+module.exports = typeDefs;

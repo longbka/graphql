@@ -12,7 +12,7 @@ const authors = [
   {
     id: 3,
     name: 'Nam Cao',
-    age: 106
+    age: 106,
   }
 ]
 const books = [
